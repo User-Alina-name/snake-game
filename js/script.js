@@ -35,7 +35,7 @@ function startGame() {
     score = 0;
     direction = "right";
     scoreElement.textContent = "Очки: " + score;
-    requestAnimationFrame(gameLoop);
+    gameLoop();
   }
 }
 
@@ -128,8 +128,8 @@ function gameLoop() {
     );
   });
 
-  // Перехід до наступного кадру
-  requestAnimationFrame(gameLoop);
+  // Перехід до наступного кадру через 300 мілісекунд (повільніший рух)
+  setTimeout(gameLoop, 300);
 }
 
 // Обробник клавіш для управління змійкою
